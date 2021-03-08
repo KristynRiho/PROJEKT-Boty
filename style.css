@@ -108,22 +108,19 @@ body {
 
 .content__numbers li {
   list-style-type: none;
+  padding: 5px;
+  border: 1px solid transparent;
+  /* orámování je sice průhlednout (transparent) barvou, ale už existuje, takže při najetí myši změníme jen jeho barvu. Kdybychom při najetí myši přidávali celý okraj, číslo uvnitř by nám poskakovalo nebo by se měnila velikost prvku o přidaný okraj */
 }
 
-.selected {
+.content__numbers li.selected, /*!!!!!  ROZDÍL ??????? ".selected" !!!!!! */
+.content__numbers li:hover,
+.content__numbers li:focus,
+.content__numbers li:active {
   color: #f15f42;
   font-weight: 500;
   border: 1px solid #f15f42;
   border-radius: 50%;
-  padding: 5px;
-}
-
-.content__numbers li:hover {
-  color: #f15f42;
-  font-weight: 500;
-  border: 1px solid #f15f42;
-  border-radius: 50%;
-  padding: 5px;
   cursor: pointer;
 }
 
@@ -131,9 +128,6 @@ body {
   position: absolute;
   left: 30px;
   bottom: 30px;
-  background-color: #f15f42;
-  border-radius: 7px;
-  box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.658);
 }
 
 .chart a {
@@ -143,11 +137,14 @@ body {
   text-decoration: none;
   color: #fff;
   letter-spacing: 1px;
+
+  background-color: #f15f42;
+  border-radius: 7px;
+  box-shadow: 0px 1px 3px rgba(128, 128, 128, 0.658);
 }
 
 .chart a:hover {
   background-color: #d1553c;
-  border-radius: 7px;
 }
 /*
  BARVY
